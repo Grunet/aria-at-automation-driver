@@ -15,7 +15,7 @@ jobs:
 
       - name: Build the whole solution
         run: |
-          msbuild ./AutomationTtsEngine.sln -v:diag
+          msbuild ./AutomationTtsEngine.sln -v:diag -property:Configuration=Release
 
       - name: Inspect outputs
         run: |
