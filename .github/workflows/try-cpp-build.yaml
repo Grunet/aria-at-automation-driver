@@ -1,4 +1,4 @@
-name: Try Cpp Build 
+name: Try Cpp Build
 on:
   push:
 
@@ -7,3 +7,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: echo 'Is this thing on?'
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - name: Build the whole solution
+        run: |
+          msbuild AutomationTtsEngine.sln
+
+      - name: Inspect outputs
+        run: |
+          ls 
+          cd Release/
+          ls
