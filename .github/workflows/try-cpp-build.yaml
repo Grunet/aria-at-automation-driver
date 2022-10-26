@@ -8,12 +8,14 @@ jobs:
     steps:
       - run: echo 'Is this thing on?'
 
+      - run: actions/checkout@v3
+
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
 
       - name: Build the whole solution
         run: |
-          msbuild .\AutomationTtsEngine.sln -v:diag
+          msbuild ./AutomationTtsEngine.sln -v:diag
 
       - name: Inspect outputs
         run: |
