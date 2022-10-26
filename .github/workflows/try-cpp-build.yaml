@@ -1,0 +1,9 @@
+name: Try Cpp Build 
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - run: echo 'Is this thing on?'
